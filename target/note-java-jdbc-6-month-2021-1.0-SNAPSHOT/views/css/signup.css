@@ -1,0 +1,262 @@
+.container-fluid {
+    max-width: 80%;
+    background-color: rgb(158, 209, 154);
+    border-radius: 15px;
+    margin: 20px auto;
+    transition: 0.5s;
+    word-wrap: break-word;
+}
+
+.container-fluid:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.w3-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.w3-round {
+    background-color: red;
+}
+
+.text-container>.btn-group {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-group>.btn-secondary {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+}
+
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+}
+
+.text-container {
+    width: 97%;
+}
+
+.text-container :nth-child(1) {
+    text-align: center;
+}
+
+.container-fluid button {
+    transition: 0.1s;
+    font-weight: bold;
+    color: crimson;
+    font-size: large;
+}
+
+.container-fluid button:hover {
+    transform: scale(1.5);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.LOGIN {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcomeLogin {
+    width: 50%;
+}
+
+.welcomeLogin h3 {
+    position: relative;
+    font-size: 64px !important;
+    color: crimson;
+}
+
+.Login-container {
+    position: relative;
+}
+
+.Login-container #Signupaccount pre a{
+    position: relative;
+    top: 30px;
+    transform: scale(1.3);
+    font-weight: bold;
+    background-color: crimson;
+    border-radius: 10px;
+}
+
+.Login-container input {
+    border-color: crimson;
+    border-radius: 5px;
+}
+
+.circle {
+    position: fixed;
+    height: 55px;
+    width: 55.5px;
+    border-radius: 50%;
+    background-color: crimson;
+    cursor: pointer;
+    transition: box-shadow .5s;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1;
+}
+
+.fa-plus {
+    position: relative;
+    color: #fff;
+    font-size: 35px !important;
+    top: 11px;
+    left: 25%;
+}
+
+.Searching {
+    width: fit-content;
+    height: fit-content;
+}
+
+.search-container {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.search-container input {
+    border-color: crimson;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.search-container button {
+    border-radius: 15px;
+    background-color: #fff;
+    border-color: crimson;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: crimson;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: crimson;
+    border-color: crimson;
+}
+
+.bg-view {
+    width: 130%;
+    height: 150%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    display: none;
+    animation-name: bg-view;
+    animation-duration: 3s;
+}
+
+.view-content {
+    position: relative;
+    display: flex;
+    word-break: break-word;
+    flex-wrap: wrap;
+    min-width: 200px;
+    max-width: 950px;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    border-radius: 4px;
+    word-wrap: break-word;
+    z-index: 3;
+}
+
+.view-content .close {
+    user-select: none;
+    position: absolute;
+    top: 0;
+    color: crimson;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.show-flex {
+    display: flex;
+}
+
+.bg-view:nth-child(1) {}
+
+.bg-view:nth-child(2) {}
+
+.bg-view:nth-child(3) {}
+
+.bg-view:nth-child(4) {}
+
+@keyframes bg-view {
+    0% {
+        display: none;
+    }
+    100% {
+        display: flex;
+    }
+}
+
+.add-form {
+    display: flex;
+    width: auto;
+}
+
+.add-form form {
+    width: 600px;
+}
+
+.form-container {
+    position: relative;
+    width: auto;
+    left: 30%;
+}
+
+@media only screen and (max-width: 991px) {
+    .form-container {
+        left: 5%;
+    }
+    .Login-container {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        margin: auto;
+    }
+    .welcomeLogin {
+        right: auto;
+        left: auto;
+    }
+}
+
+.form-container textarea {
+    height: 300px;
+}
