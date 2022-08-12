@@ -41,6 +41,13 @@ public class HomeController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/views/404.jsp");
             rd.forward(request, response);
         } else if (action != null && action.equals("sign")) {
+            String message = request.getParameter("message");
+            String alert = request.getParameter("alert");
+            if (message != null && alert != null) {
+                request.setAttribute("message", mybundle.getString(message));
+                request.setAttribute("alert", alert);
+            }
+
             RequestDispatcher rd = request.getRequestDispatcher("/views/SignUp.jsp");
             rd.forward(request, response);
         }
@@ -53,6 +60,16 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        if (action != null && action.equals("sign")) {
+            String username = request.getParameter("userName");
+            int isExist = userService.findOneByUsername(username);
+            if (isExist > 0) {
+                response.sendRedirect(request.getContextPath() + "/Sign?action=sign&message=username_exist&alert=danger");
+            }
+        }
+
+
+
         if (action != null && action.equals("login")) {
             UserModel userModel = new UserModel();
             String username = request.getParameter("userName");
@@ -74,8 +91,7 @@ public class HomeController extends HttpServlet {
             } else {
                 response.sendRedirect(request.getContextPath() + "/Login?action=login&message=username_password_invalid&alert=danger");
             }
-
-
         }
+
     }
 }

@@ -209,7 +209,7 @@
 <script type="text/javascript">
     var totalPage = ${model.totalPage};
     var currentPage = ${model.page};
-    var limit = 4;
+    var limit = 6;
     $(function () {
         window.pagObj = $('#pagination').twbsPagination({
             totalPages: totalPage,

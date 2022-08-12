@@ -29,7 +29,7 @@ public class UserAPI extends HttpServlet {
         UserModel userModel = HttpUtil.of(request.getReader()).toModel(UserModel.class);
 
 
-        if (userService.findOneByUsername(userModel.getUserName()) < 0){
+        if (userService.findOneByUsername(userModel.getUserName()) <= 0){
             userModel = userService.CreateNewUser(userModel);
         }
         mapper.writeValue(response.getOutputStream(),userModel);

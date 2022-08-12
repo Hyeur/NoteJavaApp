@@ -3,11 +3,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:url var="UserAPIurl" value="/api-admin-user"/>
 <c:url var="HomeAfterSign" value="/Login?action=login"/>
+<c:url var="AccExist" value="/Sign?action=sign&message=username_exist&alert=danger"/>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-<title>W3.CSS Template</title>
+<title>Sign up!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/views/css/default.css"/>
@@ -73,7 +73,7 @@
     </div>
 
     <div class="Login-container">
-        <form id="Signupaccount">
+        <form action="<c:url value="/Sign"/>" method="post" id="Signupaccount">
                 <pre>
                     Fullname   <input type="text" id="fullName" name="fullName">
 
@@ -85,6 +85,11 @@
 
                 </pre>
         </form>
+        <c:if test="${not empty message}">
+            <div class="alert alert-${alert}">
+                <strong>${message}</strong>
+            </div>
+        </c:if>
     </div>
 </div>
 <script>
@@ -133,6 +138,7 @@
                 },
                 error: function (error) {
                     console.log(error);
+                    window.location.href = "${AccExist}";
                 },
             });
 
